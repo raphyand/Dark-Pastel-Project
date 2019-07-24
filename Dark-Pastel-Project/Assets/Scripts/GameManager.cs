@@ -36,15 +36,16 @@ public class GameManager : MonoBehaviour
           if (Input.GetKeyDown(KeyCode.Tab) == true)
           {
 
-               //myPlayer.SwitchBetweenDarkAndPastel();
+               myPlayer.SwitchBetweenDarkAndPastel();
 
 
-               Debug.Log("Tab is detected and function is called.");
+               //Debug.Log("Tab is detected and function is called.");
 
                if (pastelWorldHolder.activeSelf == true)
                {
                     darkWorldHolder.SetActive(true);
                     pastelWorldHolder.SetActive(false);
+
 
                }
 

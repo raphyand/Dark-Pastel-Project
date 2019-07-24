@@ -9,8 +9,9 @@ public class Player : MonoBehaviour
      SpriteRenderer mySpriteRenderer;
      [SerializeField] Sprite pastel, dark;
      Animator myAnimator;
-     [SerializeField] AnimatorControllerParameter pastelAnimator, darkAnimator;
-     
+     [SerializeField] RuntimeAnimatorController pastelAnimator, darkAnimator;
+     public bool isPastel = true;
+
 
      Rigidbody2D myRigidbody2D;
 
@@ -20,6 +21,8 @@ public class Player : MonoBehaviour
           myRigidbody2D = GetComponent<Rigidbody2D>();
           mySpriteRenderer = GetComponent<SpriteRenderer>();
           myAnimator = GetComponent<Animator>();
+          mySpriteRenderer.sprite = pastel;
+          myAnimator.runtimeAnimatorController = pastelAnimator;
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class Player : MonoBehaviour
           MoveLeftRight();
           Jump();
           FlipSprite();
-          SwitchBetweenDarkAndPastel();
+          //SwitchBetweenDarkAndPastel();
     }
 
      private void MoveLeftRight()
@@ -55,16 +58,29 @@ public class Player : MonoBehaviour
      }
 
 
-     public void SwitchBetweenDarkAndPastel()
+     public void SwitchBetweenDarkAndPastel(/*bool param*/)
      {
-          if (mySpriteRenderer.sprite == pastel)
+          if (isPastel == true)
           {
                mySpriteRenderer.sprite = dark;
+               myAnimator.runtimeAnimatorController = darkAnimator;
+               isPastel = false;
+               //isPastel = param;
           }
-          else if (mySpriteRenderer.sprite == dark)
+          else if (isPastel == false)
+          {
                mySpriteRenderer.sprite = pastel;
+               myAnimator.runtimeAnimatorController = pastelAnimator;
+               isPastel = true;
+               //isPastel = param;
+          }
           else
+          {
                mySpriteRenderer.sprite = pastel;
+               myAnimator.runtimeAnimatorController = pastelAnimator;
+               isPastel = true;
+               //isPastel = param;
+          }
 
 
 
