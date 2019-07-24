@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Background
+  - Midground
+  - Foreground
+  - Player (Pastel)
+  - Enemy
+  - Interactables
+  - Pastel Foreground
+  - Dark Foreground
+  - Player (Dark)
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2130623699
+    locked: 0
+  - name: Midground
+    uniqueID: 2519129317
+    locked: 0
+  - name: Foreground
+    uniqueID: 1003228225
+    locked: 0
+  - name: Pastel-Only Foreground
+    uniqueID: 3131024573
+    locked: 0
+  - name: Dark-Only Foreground
+    uniqueID: 3714493291
+    locked: 0
+  - name: Player
+    uniqueID: 201114309
+    locked: 0
+  - name: Enemy
+    uniqueID: 4124126715
+    locked: 0
+  - name: Interactables
+    uniqueID: 3434891515
+    locked: 0
