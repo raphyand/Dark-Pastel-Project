@@ -39,6 +39,11 @@ public class Player : MonoBehaviour
           float deltaX = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
           var newXPos = myRigidbody2D.position.x + deltaX;
           myRigidbody2D.velocity = new Vector2(moveSpeed * deltaX, myRigidbody2D.velocity.y);
+
+          bool isRunning = Mathf.Abs(myRigidbody2D.velocity.x) > Mathf.Epsilon;
+          myAnimator.SetBool("isRunning", isRunning);
+
+
      }
 
      private void Jump()

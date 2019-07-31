@@ -56,6 +56,12 @@ TagManager:
   - name: Dark-Only Foreground
     uniqueID: 3714493291
     locked: 0
+  - name: Pastel NPCs
+    uniqueID: 2837822155
+    locked: 0
+  - name: Dark NPCs
+    uniqueID: 3207054503
+    locked: 0
   - name: Player
     uniqueID: 201114309
     locked: 0

@@ -6,11 +6,19 @@ public class GameManager : MonoBehaviour
 {
      // Start is called before the first frame update
 
-     [SerializeField] private GameObject pastelWorldHolder, darkWorldHolder;
+     [SerializeField] public GameObject pastelWorldHolder, darkWorldHolder;
      [SerializeField] private Player myPlayer;
+
+
+
+
 
     void Start()
     {
+
+          
+
+
           if (pastelWorldHolder.activeSelf == true)
                darkWorldHolder.SetActive(false);
           else
@@ -36,8 +44,9 @@ public class GameManager : MonoBehaviour
           if (Input.GetKeyDown(KeyCode.Tab) == true)
           {
 
-               myPlayer.SwitchBetweenDarkAndPastel();
 
+               myPlayer.SwitchBetweenDarkAndPastel();
+               FindObjectOfType<AudioManager>().SwitchMusic();
 
                //Debug.Log("Tab is detected and function is called.");
 
@@ -45,8 +54,6 @@ public class GameManager : MonoBehaviour
                {
                     darkWorldHolder.SetActive(true);
                     pastelWorldHolder.SetActive(false);
-
-
                }
 
                else if (darkWorldHolder.activeSelf == true)
