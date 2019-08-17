@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Projectile
   layers:
   - Default
   - TransparentFX
@@ -17,13 +18,13 @@ TagManager:
   - Midground
   - Foreground
   - Player (Pastel)
-  - Enemy
+  - 
   - Interactables
   - Pastel Foreground
   - Dark Foreground
   - Player (Dark)
   - Player(Test)
-  - 
+  - Enemy
   - 
   - 
   - 

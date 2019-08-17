@@ -6,22 +6,26 @@ public class AudioManager : MonoBehaviour
 {
 
      AudioSource myAudioSource;
-     [SerializeField] private AudioClip pastelAudio, darkAudio;
+     [SerializeField] private AudioClip pastelAudio, darkAudio, bossAudio;
 
      // Start is called before the first frame update
      void Start()
     {
           myAudioSource = GetComponent<AudioSource>();
-          myAudioSource.clip = pastelAudio;
-          myAudioSource.Play();
+
+          if (FindObjectOfType<GameManager>().bossLevel == true)
+               myAudioSource.clip = bossAudio;
+          else if (FindObjectOfType<GameManager>().pastelWorldHolder.activeSelf == true)
+               myAudioSource.clip = pastelAudio;
+          else if (FindObjectOfType<GameManager>().darkWorldHolder.activeSelf == true)
+               myAudioSource.clip = darkAudio;
+
+               myAudioSource.Play();
           //FindObjectOfType<GameManager>();
      }
 
-    // Update is called once per frame
-    void Update()
-    {
-         // SwitchMusic();
-    }
+
+
 
      public void SwitchMusic()
      {
@@ -36,11 +40,7 @@ public class AudioManager : MonoBehaviour
                myAudioSource.clip = pastelAudio;
                myAudioSource.Play();
           }
-          //else
-          //{
-          //     myAudioSource.clip = pastelAudio;
-          //     myAudioSource.Play();
-          //}
+
      }
 
 }

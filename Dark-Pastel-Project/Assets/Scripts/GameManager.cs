@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
 
      [SerializeField] public GameObject pastelWorldHolder, darkWorldHolder;
      [SerializeField] private Player myPlayer;
-
+     [SerializeField] private bool singleLevelOnly;
+     [SerializeField] public bool bossLevel;
 
 
 
@@ -16,24 +17,31 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-          
+          myPlayer = FindObjectOfType<Player>();
 
-
-          if (pastelWorldHolder.activeSelf == true)
-               darkWorldHolder.SetActive(false);
-          else
+          if (singleLevelOnly == false)
           {
-               pastelWorldHolder.SetActive(true);
-               darkWorldHolder.SetActive(false);
-                   
-          }
 
-    }
+
+               if (pastelWorldHolder.activeSelf == true)
+                    darkWorldHolder.SetActive(false);
+               else
+               {
+                    pastelWorldHolder.SetActive(true);
+                    darkWorldHolder.SetActive(false);
+
+               }
+          }
+          else if (singleLevelOnly == true)
+               myPlayer.SwitchBetweenDarkAndPastel();
+
+     }
 
     // Update is called once per frame
     void Update()
     {
-          WorldSwitch();
+          if (singleLevelOnly == false)
+               WorldSwitch();
     }
 
      private void WorldSwitch()

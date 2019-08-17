@@ -21,7 +21,9 @@ public class Player : MonoBehaviour
           myRigidbody2D = GetComponent<Rigidbody2D>();
           mySpriteRenderer = GetComponent<SpriteRenderer>();
           myAnimator = GetComponent<Animator>();
-          mySpriteRenderer.sprite = pastel;
+
+
+          //mySpriteRenderer.sprite = pastel;
           myAnimator.runtimeAnimatorController = pastelAnimator;
     }
 
@@ -60,6 +62,11 @@ public class Player : MonoBehaviour
           bool playerHasHorizontalSpeed = Mathf.Abs(/*transform.position.x*/myRigidbody2D.velocity.x) > Mathf.Epsilon;
           if (playerHasHorizontalSpeed)
                transform.localScale = new Vector2(Mathf.Sign(myRigidbody2D.velocity.x), 1f);
+
+
+          // transform.Rotate(0f, 180f, 0f);
+
+
      }
 
 
