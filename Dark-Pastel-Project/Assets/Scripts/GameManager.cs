@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
      [SerializeField] private Player myPlayer;
      [SerializeField] private bool singleLevelOnly;
      [SerializeField] public bool bossLevel;
-
+     [SerializeField] private bool singleLevelPastel;
 
 
 
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
 
                }
           }
-          else if (singleLevelOnly == true)
+          else if (singleLevelOnly == true && singleLevelPastel == false)
                myPlayer.SwitchBetweenDarkAndPastel();
 
      }

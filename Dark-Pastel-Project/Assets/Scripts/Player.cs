@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
      Animator myAnimator;
      [SerializeField] RuntimeAnimatorController pastelAnimator, darkAnimator;
      public bool isPastel = true;
+     private BoxCollider2D darkCollider;
+     private CapsuleCollider2D pastelCollider;
+
 
 
      Rigidbody2D myRigidbody2D;
@@ -21,7 +24,8 @@ public class Player : MonoBehaviour
           myRigidbody2D = GetComponent<Rigidbody2D>();
           mySpriteRenderer = GetComponent<SpriteRenderer>();
           myAnimator = GetComponent<Animator>();
-
+          darkCollider = GetComponent<BoxCollider2D>();
+          pastelCollider = GetComponent<CapsuleCollider2D>();
 
           //mySpriteRenderer.sprite = pastel;
           myAnimator.runtimeAnimatorController = pastelAnimator;
@@ -77,6 +81,8 @@ public class Player : MonoBehaviour
                mySpriteRenderer.sprite = dark;
                myAnimator.runtimeAnimatorController = darkAnimator;
                isPastel = false;
+               darkCollider.enabled = true;
+               pastelCollider.enabled = false;
                //isPastel = param;
           }
           else if (isPastel == false)
@@ -84,6 +90,8 @@ public class Player : MonoBehaviour
                mySpriteRenderer.sprite = pastel;
                myAnimator.runtimeAnimatorController = pastelAnimator;
                isPastel = true;
+               pastelCollider.enabled = true;
+               darkCollider.enabled = false;
                //isPastel = param;
           }
           else
@@ -91,6 +99,8 @@ public class Player : MonoBehaviour
                mySpriteRenderer.sprite = pastel;
                myAnimator.runtimeAnimatorController = pastelAnimator;
                isPastel = true;
+               pastelCollider.enabled = true;
+               darkCollider.enabled = false;
                //isPastel = param;
           }
 
